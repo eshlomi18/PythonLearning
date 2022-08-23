@@ -15,3 +15,12 @@ def capital_indexes(string):
             result.append(i)
         i += 1
     return result
+
+
+# better version
+def capital_indexes2(string):
+    result = []
+    for i, letter in enumerate(string):
+        if letter.isupper():
+            result.append(i)
+    return result
