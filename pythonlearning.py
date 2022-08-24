@@ -99,4 +99,56 @@ def only_ints(variable1, variable2):
     return type(variable1) == int and type(variable2) == int
 
 
+"""
+Double letters
+The goal of this challenge is to analyze a string to check if it contains two of the same letter in a row. For example,
+the string "hello" has l twice in a row, while the string "nono" does not have two identical letters in a row.
 
+Define a function named double_letters that takes a single parameter. The parameter is a string.
+Your function must return True if there are two identical letters in a row in the string, and False otherwise.
+"""
+
+
+def double_letters(word):
+    flag = False
+    for element in range(0, len(word) - 1):
+        if (word[element]) == (word[element + 1]):
+            flag = True
+
+            break
+        else:
+            flag = False
+    return flag
+
+
+"""
+
+Adding and removing dots
+Write a function named add_dots that takes a string and adds "." in between each letter.
+For example, calling add_dots("test") should return the string "t.e.s.t".
+
+Then, below the add_dots function, write another function named remove_dots that removes all dots from a string.
+For example, calling remove_dots("t.e.s.t") should return "test".
+
+If both functions are correct, calling remove_dots(add_dots(string)) should return back the original string for any string.
+
+(You may assume that the input to add_dots does not itself contain any dots.)
+"""
+
+
+def add_dots(word):
+    result = ""
+    for element in range(0, len(word)):
+        if element < len(word) - 1:
+            result += word[element] + "."
+        else:
+            result += word[element]
+    return result
+
+
+def remove_dots(word):
+    help = ""
+    result = word.split(".")
+    for element in range(0, len(result)):
+        help += result[element]
+    return help
